@@ -6,7 +6,7 @@ I freaking hate coming back home and freezing. We'll try to smarten my old therm
 
 The Mithos has a "telephone dialer" pin that we can exploit to remotely turn on and off the heatening:![Vemer Mithos schema](./res/schema.png)
 
-They added it to sell more *X.Code* dealers, but in the end what we care about is that by closing pins 6 and 7 we can turn off my home heatening. So far so good.
+They added it to sell more *Vemer X.Code* dialers, but in the end what we care about is that by closing pins 6 and 7 we can turn off my home heatening. So far so good.
 
 Using my Raspberry Pi 0 and a relay module (you can find them on [Amazon](https://amzn.to/3qXFsJD)), we should be able to do so.
 
