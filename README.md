@@ -4,11 +4,11 @@ I freaking hate coming back home and freezing. We'll try to smarten my old therm
 
 ## Connecting the pins
 
-The Mithos has a "telephone dialer" pin that we can exploit to remotely turn on and off the heatening:![Vemer Mithos schema](./res/schema.png)
+The Mithos has a "telephone dialer" pin that we can exploit to remotely turn on and off the heating:![Vemer Mithos schema](./res/schema.png)
 
-They added it to sell more *Vemer X.Code* dialers, but in the end what we care about is that by closing pins 6 and 7 we can turn off my home heatening. So far so good.
+They added it to sell more *Vemer X.Code* dialers, but in the end what we care about is that by closing pins 6 and 7 we can turn off my home heating. So far so good.
 
-Using my Raspberry Pi 0 and a relay module (you can find them on [Amazon](https://amzn.to/3qXFsJD)), we should be able to do so.
+Using my Raspberry Pi Model B and a relay module (you can find them on [Amazon](https://amzn.to/3qXFsJD)), we should be able to do so.
 
 We'll connect pins 6 and 7 to the NC and COM of the relay module, then connect the VCC to the Pi's 5V, the GND to the Pi's GND, and the IN to the Pi's GPIO Pin 0 (aka pin 17).
 
@@ -16,25 +16,25 @@ We'll connect pins 6 and 7 to the NC and COM of the relay module, then connect t
 
 ## How do we actually use this?
 
-When the relay is closed, the heatening is OFF.
+When the relay is closed, the heating is OFF.
 
-When the Pi is powered off and after startup, the pin is in IN mode, on value 1, and the heatening is turned OFF.
+When the Pi is powered off and after startup, the pin is in IN mode, on value 1, and the heating is turned OFF.
 
-This is the GPIO state when the heatening is OFF:
+This is the GPIO state when the heating is OFF:
 
 ![OFF](./res/off.png)
 
-To turn on the heatening, we first have to set the pin to OUT. To do so:
+To turn on the heating, we first have to set the pin to OUT. To do so:
 
 ```bash
 gpio mode 0 out
 ```
 
-This sets the pin to 0, and therefore **turns on the heatening**.
+This sets the pin to 0, and therefore **turns on the heating**.
 
 ![ON](./res/on.png)
 
-When the pin is set to 0, the heatening is ON. If the heatening is ON and the pin is in OUT mode, we can turn it OFF by using `gpio write 0 1`.
+When the pin is set to 0, the heating is ON. If the heating is ON and the pin is in OUT mode, we can turn it OFF by using `gpio write 0 1`.
 
 ## Automating this shit
 
