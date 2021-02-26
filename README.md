@@ -46,4 +46,4 @@ This is currently WIP.
 
 This is it! No more freezing in the Bolognese winter.
 
-![photo_2021-02-26 13.23.14](/Users/simone/Progetti/Caldaia/res/final.png)
+![Final setup](./res/final.png)
